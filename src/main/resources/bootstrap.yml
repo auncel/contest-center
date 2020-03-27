@@ -1,0 +1,22 @@
+# https://github.com/alibaba/spring-cloud-alibaba/wiki/Nacos-config
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      discovery:
+        server-addr: '101.37.29.47:6399'
+      config:
+        file-extension: yaml
+        server-addr: '101.37.29.47:6399'
+        timeout: 3000
+  application:
+    name: problem-warehouse
+dubbo:
+  scan:
+    base-packages: dev.yidafu.auncel.problem.warehouse
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    address: 'nacos://101.37.29.47:6399'
